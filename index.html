@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>hepi bedday</title>
+         <!-- Stylesheet -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="body"></div>
+        <div class="cake">
+            <div class="plate"></div>
+            <div class="layer layer-bottom"></div>
+            <div class="layer layer-middle"></div>
+            <div class="layer layer-top"></div>
+            <div class="icing"></div>
+            <div class="drip drip1"></div>
+            <div class="drip drip2"></div>
+            <div class="drip drip3"></div>
+            <div class="candle">
+            <div class="flame" id="toggleFlame"></div>
+            <div class="text1"><h1>happy birthday marvaa tiup lilinnya yaa</h1>
+                <p>pencet lilinnya ya</p>
+            <div class="text2"><h2>jangan lupa make a wish</h2></div>
+            <div class="click2" id="texttoggleFlame"> ayo liat kadonya</div> 
+        </div>
+        <div id="candle" onclick="toggleCandle()">
+            <div id="flame"></div>
+        </div>
+        </div>
+    </body>
+</html>
+<script>
+    document.getElementById('toggleFlame').addEventListener('click', function() {
+        this.classList.toggle('off');
+    });
+</script>
