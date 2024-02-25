@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
 .bg{
    position: relative; 
    width: 100%;
