@@ -201,13 +201,12 @@
     position: relative;
     background-color: plum;
     padding: 5px 10px;
-    top: 305px;
+    top: 300px;
     left: 5px;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     cursor: pointer;
-    transition: .3s;
     text-decoration: none;
 }
 
@@ -217,4 +216,5 @@
     background-color: rgb(255, 66, 255);
     padding: 5px 10px;
     text-decoration: none;
+    transition: 1s;
 }
