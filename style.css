@@ -173,7 +173,6 @@
     top: 300px;
     left: 50%;
     transform: translateX(-50%);
-    cursor: pointer;
     text-decoration: none;
     opacity: 0;
     transition: top 1s, opacity 0.5s;
