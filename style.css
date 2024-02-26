@@ -191,7 +191,7 @@
     padding: 10px 15px;
     font-size: auto;
     text-decoration: none;
-    transition: 2s;
+    transition: 1s;
 }
 
 @keyframes flicker {
