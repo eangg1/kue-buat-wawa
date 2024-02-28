@@ -39,6 +39,7 @@
     text-overflow: inherit;
     justify-content: center;
     left:5px;
+    padding: 0px 200px;
 }
 .plate {
     width: 270px;
@@ -179,8 +180,9 @@
 }
 
 .flame2.on {
-    top: 500px; /* Adjust the 'top' value as needed */
+    top: 510px; /* Adjust the 'top' value as needed */
     opacity: 1;
+    transition-delay: .5s;
 }
 
 .flame2.on:hover {
