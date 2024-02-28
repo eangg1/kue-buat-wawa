@@ -1,14 +1,11 @@
 let isBlowing = false;
-let audioContext;
-let analyser;
-let microphone;
+    let isFlameOff = false;
 
-function initializeMicrophone() {
     navigator.mediaDevices.getUserMedia({ audio: true })
         .then(function(stream) {
-            audioContext = new AudioContext();
-            analyser = audioContext.createAnalyser();
-            microphone = audioContext.createMediaStreamSource(stream);
+            const audioContext = new AudioContext();
+            const analyser = audioContext.createAnalyser();
+            const microphone = audioContext.createMediaStreamSource(stream);
 
             analyser.fftSize = 256;
             const bufferLength = analyser.frequencyBinCount;
@@ -17,12 +14,15 @@ function initializeMicrophone() {
             microphone.connect(analyser);
 
             setInterval(function() {
-                analyser.getByteFrequencyData(dataArray);
-                const average = dataArray.reduce((acc, val) => acc + val, 0) / bufferLength;
-                if (average > 1000) {
-                    if (!isBlowing) {
+                analyser.getByteTimeDomainData(dataArray);
+                const sum = dataArray.reduce((acc, val) => acc + val, 0);
+                const average = sum / bufferLength;
+                if (average > 135) { // Adjusted threshold to 180 for higher effort blow
+                    if (!isBlowing && !isFlameOff) {
                         isBlowing = true;
                         toggleFlame(); // Turn off the flame when blowing into the microphone
+                        toggleFlame2(); // Toggle flame2 text visibility
+                        isFlameOff = true;
                     }
                 } else {
                     isBlowing = false;
@@ -32,19 +32,19 @@ function initializeMicrophone() {
         .catch(function(err) {
             console.error('Error accessing microphone:', err);
         });
-}
 
-function toggleFlame() {
-    const flame = document.getElementById('toggleFlame');
-    flame.classList.toggle('off');
-}
+    function toggleFlame() {
+        const flame = document.getElementById('toggleFlame');
+        flame.classList.toggle('off');
+    }
 
-document.getElementById('toggleFlame').addEventListener('click', function() {
-    this.classList.toggle('off');
-    document.getElementById('texttoggleFlame').classList.toggle('on');
-});
+    function toggleFlame2() {
+        const flame2 = document.getElementById('texttoggleFlame');
+        flame2.classList.toggle('on');
+    }
 
-// Initialize microphone when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    initializeMicrophone();
-});
+    document.getElementById('toggleFlame').addEventListener('click', function() {
+        this.classList.toggle('off');
+        document.getElementById('texttoggleFlame').classList.toggle('on');
+        isFlameOff = !isFlameOff;
+    });
