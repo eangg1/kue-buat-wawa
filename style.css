@@ -230,7 +230,3 @@
 body.play-music {
     animation: fadeIn 2s ease-in-out;    
 }
-
-.playmusic {
-    position:relative; top:-200px; left:0px; margin-left:-190px; margin-right:-190px;
-}
