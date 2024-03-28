@@ -239,3 +239,7 @@
 body.play-music {
     animation: fadeIn 2s ease-in-out;    
 }
+
+.swal2-image {
+    border-radius: 50%;
+}
