@@ -17,7 +17,7 @@ let isBlowing = false;
                 analyser.getByteTimeDomainData(dataArray);
                 const sum = dataArray.reduce((acc, val) => acc + val, 0);
                 const average = sum / bufferLength;
-                if (average > 135) { // Adjusted threshold to 180 for higher effort blow
+                if (average > 130) { // Adjusted threshold to 180 for higher effort blow
                     if (!isBlowing && !isFlameOff) {
                         isBlowing = true;
                         toggleFlame(); // Turn off the flame when blowing into the microphone
