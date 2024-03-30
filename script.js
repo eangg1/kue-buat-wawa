@@ -64,7 +64,7 @@ audio.addEventListener('pause', () => {
 document.addEventListener("DOMContentLoaded", function() {
     Swal.fire({
         title: 'cara tiup lilin',
-        text: 'tiup lilinnya lewat mic, tiup di mic sekenceng mungkin sampe lilinnya mati',
+        text: 'tiup lilinnya lewat mic, tiup di mic sekenceng mungkin sampe lilinnya mati (alternatif lain lilinnya dipencet)',
         imageUrl: 'wawa.jpg', // Replace 'url_to_marva_photo.jpg' with the actual URL to Marva's photo
         imageWidth: 200, // Specify the width of the image
         imageHeight: 200, // Specify the height of the image

@@ -243,3 +243,7 @@ body.play-music {
 .swal2-image {
     border-radius: 50%;
 }
+
+.swal2-text2 {
+    opacity: 50%;
+}
